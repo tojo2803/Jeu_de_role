@@ -1,0 +1,71 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 84% 5%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Glass morphism */
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-sm;
+  }
+
+  /* Smooth transitions */
+  .smooth-transition {
+    transition: all 300ms ease-in-out;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    transition: all 300ms ease-in-out;
+    @apply hover:translate-y-[-2px] hover:shadow-md;
+  }
+
+  /* Button hover effect */
+  .btn-hover {
+    transition: all 200ms ease-in-out;
+    @apply hover:scale-[1.02] active:scale-[0.98];
+  }
+}

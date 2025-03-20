@@ -1,9 +1,8 @@
+# Utilisation de l'image officielle de Node.js
+FROM node:16-alpine
 
-# Étape 1 : Utiliser l’image officielle Node.js
-FROM node:18
-
-# Définir le répertoire de travail dans le conteneur
-WORKDIR /app
+# Créer un répertoire de travail
+WORKDIR /home/node/app
 
 # Copier les fichiers package.json et package-lock.json
 COPY package*.json ./
@@ -11,11 +10,11 @@ COPY package*.json ./
 # Installer les dépendances
 RUN npm install
 
-# Copier tout le reste des fichiers
+# Copier tous les fichiers de ton projet dans le conteneur
 COPY . .
 
-# Exposer le port utilisé par l’application
+# Exposer le port du serveur
 EXPOSE 3000
 
-# Commande pour démarrer l'application
-CMD ["node", "server.js"]
+# Démarrer l'application en mode développement
+CMD ["npm", "run", "dev"]
